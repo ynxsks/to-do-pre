@@ -17,8 +17,8 @@ function loadTasks() {
 }
 
 function createItem(item) {
-      const template = document.getElementById("to-do__item-template");
-      const clone = template.content.querySelector(".to-do__item").cloneNode(true);
+    const template = document.getElementById("to-do__item-template");
+    const clone = template.content.querySelector(".to-do__item").cloneNode(true);
     const textElement = clone.querySelector(".to-do__item-text");
     const deleteButton = clone.querySelector(".to-do__item-button_type_delete");
     const duplicateButton = clone.querySelector(".to-do__item-button_type_duplicate");
@@ -31,8 +31,8 @@ function createItem(item) {
 }
 
 function getTasksFromDOM() {
-    const nodes = document.querySelectorAll(".to-do__item-text");
-    return Array.from(nodes, (node) => node.textContent);
+    const nodes = document.querySelectorAll(".to-do__item-text"); // находим все текстовые элементы задач на странице
+    return Array.from(nodes, (node) => node.textContent);         // cоздаем из них массив обычных строк
 }
 
 function saveTasks(tasks) {
