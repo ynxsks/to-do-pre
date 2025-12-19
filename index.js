@@ -1,4 +1,4 @@
-let items = [
+const items = [
     "Сделать проектную работу",
     "Полить цветы",
     "Пройти туториал по Реакту",
@@ -31,8 +31,8 @@ function createItem(item) {
 }
 
 function getTasksFromDOM() {
-    const nodes = document.querySelectorAll(".to-do__item-text"); // находим все текстовые элементы задач на странице
-    return Array.from(nodes, (node) => node.textContent);         // cоздаем из них массив обычных строк
+    const nodes = document.querySelectorAll(".to-do__item-text");
+    return Array.from(nodes, (node) => node.textContent);
 }
 
 function saveTasks(tasks) {
@@ -69,8 +69,8 @@ function attachItemHandlers(itemElement) {
 
 
 
-items = loadTasks();
-items.forEach((task) => {
+initItems = loadTasks();
+initItems.forEach((task) => {
     listElement.append(createItem(task));
 });
 
